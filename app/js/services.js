@@ -1,21 +1,27 @@
 var routingInfoServices = angular.module('routingInfoServices', ['ngResource']);
 
-routingInfoServices.factory('RoutingInfos', function ($resource) {
-    return $resource('api/routinginfos/:msisdn.json', {}, {
-        get: {
-            method: 'GET',
-            params: {'timeout-millis': 1000},
-        }
-    });
+routingInfoServices.factory('RoutingInfos', function ($http) {
+    var getRoutingInfo = function(msisdn, invokeTimeoutMillis, onSuccess, onError) {
+        $http.get("api/routinginfos/" + msisdn + ".json", { params: { 'timeout-millis': invokeTimeoutMillis || 1000 } })
+        .success(onSuccess)
+        .error(onError);
+    };
+
+    return {
+        get: getRoutingInfo
+    };
 });
 
-routingInfoServices.factory('SmRoutingInfos', function ($resource) {
-    return $resource('api/smroutinginfos/:msisdn.json', {}, {
-        get: {
-            method: 'GET',
-            params: {'timeout-millis': 1000}
-        }
-    });
+routingInfoServices.factory('SmRoutingInfos', function ($http) {
+    var getSmRoutingInfo = function(msisdn, invokeTimeoutMillis, onSuccess, onError) {
+        $http.get("api/smroutinginfos/" + msisdn + ".json", { params: { 'timeout-millis': invokeTimeoutMillis || 1000 } })
+        .success(onSuccess)
+        .error(onError);
+    };
+
+    return {
+        get: getSmRoutingInfo
+    };
 });
 
 routingInfoServices.factory('HttpSupport', function () {

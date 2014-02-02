@@ -19,18 +19,18 @@ routingInfoControllers.controller('RoutingInfoCtrl', function ($scope, $routePar
     (function() {
         $('.popover-enabled').popover({});
     })();
-    
+
     if ($routeParams.msisdn) {
         $scope.$parent.msisdn = $routeParams.msisdn;
 
-        RoutingInfos.get({msisdn: $routeParams.msisdn, 'timeout-millis': $routeParams['timeout-millis']}, function(routingInfo, getResponseHeaders) {
-            $scope.httpStatusCode = 200;
-            $scope.httpStatusMessage = HttpSupport.mapHttpStatusCode(200);
-            $scope.routingInfo = routingInfo;
-        }, function(httpResponse) {
-            $scope.httpStatusCode = httpResponse.status;
-            $scope.httpStatusMessage = HttpSupport.mapHttpStatusCode(httpResponse.status);
-            $scope.routingInfo = {};
+        RoutingInfos.get($routeParams.msisdn, $routeParams['timeout-millis'], function(data, status, headers) {
+            $scope.httpStatusCode = status;
+            $scope.httpStatusMessage = HttpSupport.mapHttpStatusCode(status);
+            $scope.routingInfo = data;
+        }, function(data, status, headers) {
+            $scope.httpStatusCode = status;
+            $scope.httpStatusMessage = HttpSupport.mapHttpStatusCode(status);
+            $scope.routingInfo = data || {};
         });
     }
 });
@@ -44,14 +44,14 @@ routingInfoControllers.controller('SmRoutingInfoCtrl', function ($scope, $routeP
     if ($routeParams.msisdn) {
         $scope.$parent.msisdn = $routeParams.msisdn;
 
-        SmRoutingInfos.get({msisdn: $routeParams.msisdn, 'timeout-millis': $routeParams['timeout-millis']}, function(smRoutingInfo, getResponseHeaders) {
-            $scope.httpStatusCode = 200;
-            $scope.httpStatusMessage = HttpSupport.mapHttpStatusCode(200);
-            $scope.smRoutingInfo = smRoutingInfo;
-        }, function(httpResponse) {
-            $scope.httpStatusCode = httpResponse.status;
-            $scope.httpStatusMessage = HttpSupport.mapHttpStatusCode(httpResponse.status);
-            $scope.smRoutingInfo = {};
+        SmRoutingInfos.get($routeParams.msisdn, $routeParams['timeout-millis'], function(data, status, headers) {
+            $scope.httpStatusCode = status;
+            $scope.httpStatusMessage = HttpSupport.mapHttpStatusCode(status);
+            $scope.smRoutingInfo = data;
+        }, function(data, status, headers) {
+            $scope.httpStatusCode = status;
+            $scope.httpStatusMessage = HttpSupport.mapHttpStatusCode(status);
+            $scope.smRoutingInfo = data || {};
         });
     }
 });
