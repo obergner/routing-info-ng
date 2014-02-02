@@ -16,9 +16,9 @@
         <span>Request</span>
         <dl>
             <dt>ID</dt>
-            <dd class="well well-sm">{{smRoutingInfo.request.id}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="A unique ID assigned to the request by the server.<br/>May be used to track request processing on the server.">{{smRoutingInfo.request.id}}</dd>
             <dt>Received (Timestamp)</dt>
-            <dd class="well well-sm">{{smRoutingInfo.request['received-at']}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="When the server received this request (Unix timestamp).">{{smRoutingInfo.request['received-at']}}</dd>
             <dt>Status Code</dt>
             <dd class="well well-sm">{{smRoutingInfo.status.code}}</dd>
             <dt>Message</dt>
@@ -29,25 +29,24 @@
         <span>IMSI</span>
         <dl>
             <dt>IMSI</dt>
-            <dd class="well well-sm">{{smRoutingInfo.imsi.imsi}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/International_mobile_subscriber_identity' target='_blank'>International Mobile Subscriber Indentity</a>">{{smRoutingInfo.imsi.imsi}}</dd>
             <dt>MCC</dt>
-            <dd class="well well-sm">{{smRoutingInfo.imsi.mcc}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_country_code' target='_blank'>Mobile Country Code</a>">{{smRoutingInfo.imsi.mcc}}</dd>
             <dt>MNC</dt>
-            <dd class="well well-sm">{{smRoutingInfo.imsi.mnc}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Network_Code' target='_blank'>Mobile Network Code</a>">{{smRoutingInfo.imsi.mnc}}</dd>
             <dt>MSIN</dt>
-            <dd class="well well-sm">{{smRoutingInfo.imsi.msin}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Subscription_Identification_Number' target='_blank'>Mobile Subscription Identification Number</a>">{{smRoutingInfo.imsi.msin}}</dd>
         </dl>
         </li>
-        </li>
         <li class="li-msc">
-        <span>MSC</span>
+        <span class="popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_switching_center#Mobile_switching_center_.28MSC.29' target='_blank'>Mobile Switching Center Address</a>">MSC</span>
         <dl>
             <dt>Address Nature</dt>
-            <dd class="well well-sm">{{smRoutingInfo['msc-address']['address-nature']}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Global_Title' target='_blank'>Type of Number/Nature of Address Indicator</a>">{{smRoutingInfo['msc-address']['address-nature']}}</dd>
             <dt>Numbering Plan</dt>
-            <dd class="well well-sm">{{smRoutingInfo['msc-address']['numbering-plan']}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Global_Title' target='_blank'>Numbering Plan Indicator</a>">{{smRoutingInfo['msc-address']['numbering-plan']}}</dd>
             <dt>Address</dt>
-            <dd class="well well-sm">{{smRoutingInfo['msc-address']['address']}}</dd>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_switching_center#Mobile_switching_center_.28MSC.29' target='_blank'>Mobile Switching Center Address</a>">{{smRoutingInfo['msc-address']['address']}}</dd>
         </dl>
         </li>
     </ul>
