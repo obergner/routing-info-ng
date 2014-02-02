@@ -1,5 +1,12 @@
 var routingInfoApp = angular.module('routingInfoApp', ['ngRoute', 'ngAnimate', 'routingInfoServices', 'routingInfoControllers']);
 
+routingInfoApp.constant('routingInfoSettings', {
+    apiBaseUrl: 'api/',
+    timeoutMillisOrDefault: function(timeoutMillis) {
+        return timeoutMillis || 1000;
+    }
+});
+
 routingInfoApp.run(function($rootScope) {
     $('.tooltip-enabled').tooltip({});
     $('.popover-enabled').popover({});
