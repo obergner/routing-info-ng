@@ -19,10 +19,9 @@ routingInfoControllers.controller('RoutingInfoCtrl', function ($scope, $routePar
     (function() {
         $('.popover-enabled').popover({});
     })();
-
+    
     if ($routeParams.msisdn) {
         $scope.$parent.msisdn = $routeParams.msisdn;
-        //$scope.$parent.invokeTimeoutMillis = $routeParams['timeout-millis'];
 
         RoutingInfos.get({msisdn: $routeParams.msisdn, 'timeout-millis': $routeParams['timeout-millis']}, function(routingInfo, getResponseHeaders) {
             $scope.httpStatusCode = 200;
@@ -44,7 +43,6 @@ routingInfoControllers.controller('SmRoutingInfoCtrl', function ($scope, $routeP
 
     if ($routeParams.msisdn) {
         $scope.$parent.msisdn = $routeParams.msisdn;
-        //$scope.$parent.$apply($scope.$parent.invokeTimeoutMillis = $routeParams['timeout-millis']);
 
         SmRoutingInfos.get({msisdn: $routeParams.msisdn, 'timeout-millis': $routeParams['timeout-millis']}, function(smRoutingInfo, getResponseHeaders) {
             $scope.httpStatusCode = 200;

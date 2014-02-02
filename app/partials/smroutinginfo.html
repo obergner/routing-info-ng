@@ -1,6 +1,6 @@
-<div class="container fade-in-out" ng-show="smRoutingInfo">
+<div class="container fade-in-out" data-ng-show="smRoutingInfo">
     <h1>Routing Info (SRISM)</h1>
-    <div class="alert alert-dismissable" ng-class="{200: 'alert-success', 404: 'alert-warning', 501: 'alert-error'}[httpStatusCode]">
+    <div class="alert alert-dismissable" data-ng-class="{200: 'alert-success', 404: 'alert-warning', 501: 'alert-error'}[httpStatusCode]">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>{{httpStatusCode}}</strong> {{httpStatusMessage}}
     </div>
@@ -50,5 +50,5 @@
         </dl>
         </li>
     </ul>
-    <p><a class="btn btn-primary btn-lg" role="button" href="#/routinginfos/{{smRoutingInfo.msisdn}}?timeout-millis={{invokeTimeoutMillis}}" ng-show="smRoutingInfo.msisdn">GET SRI &raquo;</a></p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="#/routinginfos/{{smRoutingInfo.msisdn}}?timeout-millis={{invokeTimeoutMillis}}" data-ng-show="smRoutingInfo.msisdn">GET SRI &raquo;</a></p>
 </div>

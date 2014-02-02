@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="routingInfoApp">
+<html lang="en" data-ng-app="routingInfoApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
         <link href="app/css/app.css" rel="stylesheet">
     </head>
 
-    <body ng-controller="NavigationBarCtrl" ng-init="invokeTimeoutMillis = 1000">
+    <body data-ng-controller="NavigationBarCtrl" data-ng-init="invokeTimeoutMillis = 1000">
 
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -34,13 +34,13 @@
                 <div class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" role="form">
                         <div class="form-group">
-                            <input id="msisdn-input" type="text" placeholder="MSISDN" class="form-control tooltip-enabled" data-toggle="tooltip" data-placement="bottom" title="MSISDN in international format" ng-model="msisdn">
-                            <input id="timeout-input" type="number" min="100" max="5000" step="100" value="1000" class="form-control tooltip-enabled" data-toggle="tooltip" data-placement="bottom" title="Server-side invoke timeout in milliseconds" ng-model="invokeTimeoutMillis">
+                            <input id="msisdn-input" type="text" placeholder="MSISDN" class="form-control tooltip-enabled" data-toggle="tooltip" data-placement="bottom" title="MSISDN in international format" data-ng-model="msisdn">
+                            <input id="timeout-input" type="number" min="100" max="5000" step="100" value="1000" class="form-control tooltip-enabled" data-toggle="tooltip" data-placement="bottom" title="Server-side invoke timeout in milliseconds" data-ng-model="invokeTimeoutMillis">
                         </div>
                         <!-- Split button -->
                         <div class="btn-group">
-                            <button type="button" class="btn btn-success" ng-click="getSmRoutingInfo(msisdn,invokeTimeoutMillis)" ng-disabled="isInvalidMsisdn(msisdn)">GET</button>
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" ng-disabled="isInvalidMsisdn(msisdn)">
+                            <button type="button" class="btn btn-success" data-ng-click="getSmRoutingInfo(msisdn,invokeTimeoutMillis)" data-ng-disabled="isInvalidMsisdn(msisdn)">GET</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-ng-disabled="isInvalidMsisdn(msisdn)">
                                 <span class="caret"></span>
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div class="jumbotron" ng-view>
+        <div class="jumbotron" data-ng-view>
         </div>
 
         <div class="container">

@@ -1,6 +1,6 @@
-<div class="container fade-in-out" ng-show="routingInfo">
+<div class="container fade-in-out" data-ng-show="routingInfo">
     <h1>Routing Info (SRI)</h1>
-    <div class="alert alert-dismissable" ng-class="{200: 'alert-success', 404: 'alert-warning', 501: 'alert-error'}[httpStatusCode]">
+    <div class="alert alert-dismissable" data-ng-class="{200: 'alert-success', 404: 'alert-warning', 501: 'alert-error'}[httpStatusCode]">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>{{httpStatusCode}}</strong> {{httpStatusMessage}}
     </div>
@@ -38,7 +38,7 @@
             <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Subscription_Identification_Number' target='_blank'>Mobile Subscription Identification Number</a>">{{routingInfo.imsi.msin}}</dd>
         </dl>
         </li>
-        <li class="li-roaming-number" ng-show="routingInfo['roaming-number']">
+        <li class="li-roaming-number" data-ng-show="routingInfo['roaming-number']">
         <span class="popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Station_Roaming_Number' target='_blank'>Mobile Station Roaming Number</a></br>Only returned if call forwarding is disabled">Roaming Number</span>
         <dl>
             <dt>Address Nature</dt>
@@ -49,7 +49,7 @@
             <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Station_Roaming_Number' target='_blank'>Mobile Station Roaming Number</a>">{{routingInfo['roaming-number']['address']}}</dd>
         </dl>
         </li>
-        <li class="li-forwarded-to-number" ng-show="routingInfo['forwarded-to-number']">
+        <li class="li-forwarded-to-number" data-ng-show="routingInfo['forwarded-to-number']">
         <span class="popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Call_forwarding' target='_blank'>Forwarded To Number</a></br>Only returned if call forwarding is enabled">Forwarded To Number</span>
         <dl>
             <dt>Address Nature</dt>
@@ -61,5 +61,5 @@
         </dl>
         </li>
     </ul>
-    <p><a class="btn btn-primary btn-lg" role="button" href="#/smroutinginfos/{{routingInfo.msisdn}}?timeout-millis={{invokeTimeoutMillis}}" ng-show="routingInfo.msisdn">GET SRISM &raquo;</a></p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="#/smroutinginfos/{{routingInfo.msisdn}}?timeout-millis={{invokeTimeoutMillis}}" data-ng-show="routingInfo.msisdn">GET SRISM &raquo;</a></p>
 </div>

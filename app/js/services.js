@@ -2,13 +2,19 @@ var routingInfoServices = angular.module('routingInfoServices', ['ngResource']);
 
 routingInfoServices.factory('RoutingInfos', function ($resource) {
     return $resource('api/routinginfos/:msisdn.json', {}, {
-        get:    {method: 'GET', params: {'timeout-millis': 1000}}
+        get: {
+            method: 'GET',
+            params: {'timeout-millis': 1000},
+        }
     });
 });
 
 routingInfoServices.factory('SmRoutingInfos', function ($resource) {
     return $resource('api/smroutinginfos/:msisdn.json', {}, {
-        get:    {method: 'GET', params: {'timeout-millis': 1000}}
+        get: {
+            method: 'GET',
+            params: {'timeout-millis': 1000}
+        }
     });
 });
 
