@@ -1,4 +1,4 @@
-var routingInfoServices = angular.module('routingInfoServices', ['ngResource']);
+var routingInfoServices = angular.module('routingInfoServices', []);
 
 routingInfoServices.factory('RoutingInfos', function ($http) {
     var getRoutingInfo = function(msisdn, invokeTimeoutMillis, onSuccess, onError) {

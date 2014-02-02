@@ -1,4 +1,4 @@
-var routingInfoControllers = angular.module('routingInfoControllers', ['ngRoute', 'ngResource', 'routingInfoServices']);
+var routingInfoControllers = angular.module('routingInfoControllers', ['ngRoute', 'routingInfoServices']);
 
 routingInfoControllers.controller('NavigationBarCtrl', function ($scope, $location) {
 
