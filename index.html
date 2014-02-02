@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="routingInfoApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Routing Info NG</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="app/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="app/css/jumbotron.css" rel="stylesheet">
+
+        <link href="app/css/app.css" rel="stylesheet">
+    </head>
+
+    <body ng-controller="NavigationBarCtrl" ng-init="invokeTimeoutMillis = 1000">
+
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Routing Info NG</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right" role="form">
+                        <div class="form-group">
+                            <input id="msisdn-input" type="text" placeholder="MSISDN" class="form-control tooltip-enabled" data-toggle="tooltip" data-placement="bottom" title="MSISDN in international format" ng-model="msisdn">
+                            <input id="timeout-input" type="number" min="100" max="5000" step="100" value="1000" class="form-control tooltip-enabled" data-toggle="tooltip" data-placement="bottom" title="Server-side invoke timeout in milliseconds" ng-model="invokeTimeoutMillis">
+                        </div>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-success" ng-click="getSmRoutingInfo(msisdn,invokeTimeoutMillis)" ng-disabled="isInvalidMsisdn(msisdn)">GET</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" ng-disabled="isInvalidMsisdn(msisdn)">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#/smroutinginfos/{{msisdn}}?timeout-millis={{invokeTimeoutMillis}}">SRISM</a></li>
+                                <li><a href="#/routinginfos/{{msisdn}}?timeout-millis={{invokeTimeoutMillis}}">SRI</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div><!--/.navbar-collapse -->
+            </div>
+        </div>
+
+        <div class="jumbotron" ng-view>
+        </div>
+
+        <div class="container">
+
+            <hr>
+
+            <footer>
+            <p>&copy;  Olaf Bergner 2014</p>
+            </footer>
+        </div> <!-- /container -->
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-resource.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-animate.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="app/js/bootstrap.min.js"></script>
+        <script src="app/js/app.js"></script>
+        <script src="app/js/services.js"></script>
+        <script src="app/js/controllers.js"></script>
+    </body>
+</html>
+

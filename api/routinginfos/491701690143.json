@@ -1,0 +1,23 @@
+{
+    "api-version": "1.0",
+    "status": {
+        "code": 0,
+        "message": "OK"
+    },
+    "request": {
+        "id": "3f92e5eb-b6b6-432b-a747-d6be675dcc06",
+        "received-at": 1391183267937
+    },
+    "msisdn": "491701690143",
+    "imsi": {
+        "imsi": "262010000000000",
+        "mcc": "26",
+        "mnc": "201",
+        "msin": "0000000000"
+    },
+    "roaming-number": {
+        "address-nature": "NATIONAL_SIGNIFICANT_NUMBER",
+        "numbering-plan": "ISDN",
+        "address": "b0651701690143"
+    }
+}

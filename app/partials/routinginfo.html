@@ -1,0 +1,65 @@
+<div class="container fade-in-out" ng-show="routingInfo" ng-init="$('.popover-enabled').popover({});console.log('BUH');">
+    <h1>Routing Info (SRI)</h1>
+    <div class="alert alert-dismissable" ng-class="{200: 'alert-success', 404: 'alert-warning', 501: 'alert-error'}[httpStatusCode]">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>{{httpStatusCode}}</strong> {{httpStatusMessage}}
+    </div>
+    <ul class="routing-info">
+        <li class="li-msisdn">
+        <span>Input</span>
+        <dl>
+            <dt>MSISDN</dt>
+            <dd class="well well-sm">{{routingInfo.msisdn}}</dd>
+        </dl>
+        </li>
+        <li class="li-request">
+        <span>Request</span>
+        <dl>
+            <dt>ID</dt>
+            <dd class="well well-sm">{{routingInfo.request.id}}</dd>
+            <dt>Received (Timestamp)</dt>
+            <dd class="well well-sm">{{routingInfo.request['received-at']}}</dd>
+            <dt>Status Code</dt>
+            <dd class="well well-sm">{{routingInfo.status.code}}</dd>
+            <dt>Message</dt>
+            <dd class="well well-sm">{{routingInfo.status.message}}</dd>
+        </dl>
+        </li>
+        <li class="li-imsi">
+        <span>IMSI</span>
+        <dl>
+            <dt>IMSI</dt>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/International_mobile_subscriber_identity' target='_blank'>International Mobile Subscriber Indentity</a>">{{routingInfo.imsi.imsi}}</dd>
+            <dt>MCC</dt>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_country_code' target='_blank'>Mobile Country Code</a>">{{routingInfo.imsi.mcc}}</dd>
+            <dt>MNC</dt>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Network_Code' target='_blank'>Mobile Network Code</a>">{{routingInfo.imsi.mnc}}</dd>
+            <dt>MSIN</dt>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Subscription_Identification_Number' target='_blank'>Mobile Subscription Identification Number</a>">{{routingInfo.imsi.msin}}</dd>
+        </dl>
+        </li>
+        <li class="li-roaming-number" ng-show="routingInfo['roaming-number']">
+        <span class="popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Station_Roaming_Number' target='_blank'>Mobile Station Roaming Number</a></br>Only returned if call forwarding is disabled">Roaming Number</span>
+        <dl>
+            <dt>Address Nature</dt>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Global_Title' target='_blank'>Type of Number/Nature of Address Indicator</a>">{{routingInfo['roaming-number']['address-nature']}}</dd>
+            <dt>Numbering Plan</dt>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Global_Title' target='_blank'>Numbering Plan Indicator</a>">{{routingInfo['roaming-number']['numbering-plan']}}</dd>
+            <dt>Address</dt>
+            <dd class="well well-sm popover-enabled" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-trigger="click" data-content="<a href='http://en.wikipedia.org/wiki/Mobile_Station_Roaming_Number' target='_blank'>Mobile Station Roaming Number</a>">{{routingInfo['roaming-number']['address']}}</dd>
+        </dl>
+        </li>
+        <li class="li-forwarded-to-number" ng-show="routingInfo['forwarded-to-number']">
+        <span>Forwarded To Number</span>
+        <dl>
+            <dt>Address Nature</dt>
+            <dd class="well well-sm">{{routingInfo['forwarded-to-number']['address-nature']}}</dd>
+            <dt>Numbering Plan</dt>
+            <dd class="well well-sm">{{routingInfo['forwarded-to-number']['numbering-plan']}}</dd>
+            <dt>Address</dt>
+            <dd class="well well-sm">{{routingInfo['forwarded-to-number']['address']}}</dd>
+        </dl>
+        </li>
+    </ul>
+    <p><a class="btn btn-primary btn-lg" role="button" href="#/smroutinginfos/{{routingInfo.msisdn}}?timeout-millis={{invokeTimeoutMillis}}" ng-show="routingInfo.msisdn">GET SRISM &raquo;</a></p>
+</div>

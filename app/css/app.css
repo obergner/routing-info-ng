@@ -1,0 +1,78 @@
+body{
+    padding-top: 80px;
+}
+
+ul.routing-info {
+    clear: both;
+    margin: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+ul.routing-info > li.li-msisdn {
+    display: inline-block;
+    width: 130px;
+    vertical-align: top;
+}
+
+ul.routing-info > li.li-request {
+    display: inline-block;
+    width: 300px;
+    vertical-align: top;
+}
+
+ul.routing-info > li.li-imsi {
+    display: inline-block;
+    width: 150px;
+    vertical-align: top;
+}
+
+ul.routing-info > li.li-roaming-number {
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+}
+
+ul.routing-info > li.li-forwarded-to-number {
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+}
+
+ul.routing-info > li.li-msc {
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+}
+
+ul.routing-info > li > span{
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-left: 8px;
+}
+
+ul.routing-info dt {
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.fade-in-out {
+}
+
+.fade-in-out.ng-hide-add, .fade-in-out.ng-hide-remove {
+    -webkit-transition:all linear 1.5s;
+    -moz-transition:all linear 1.5s;
+    -o-transition:all linear 1.5s;
+    transition:all linear 1.5s;
+    display:block!important;
+}
+
+.fade-in-out.ng-hide-add.ng-hide-add-active,
+.fade-in-out.ng-hide-remove {
+    opacity:0;
+}
+
+.fade-in-out.ng-hide-add,
+.fade-in-out.ng-hide-remove.ng-hide-remove-active {
+    opacity:1;
+}

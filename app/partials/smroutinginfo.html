@@ -1,0 +1,55 @@
+<div class="container fade-in-out" ng-show="smRoutingInfo">
+    <h1>Routing Info (SRISM)</h1>
+    <div class="alert alert-dismissable" ng-class="{200: 'alert-success', 404: 'alert-warning', 501: 'alert-error'}[httpStatusCode]">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>{{httpStatusCode}}</strong> {{httpStatusMessage}}
+    </div>
+    <ul class="routing-info">
+        <li class="li-msisdn">
+        <span>MSISDN</span>
+        <dl>
+            <dt>MSISDN</dt>
+            <dd class="well well-sm">{{smRoutingInfo.msisdn}}</dd>
+        </dl>
+        </li>
+        <li class="li-request">
+        <span>Request</span>
+        <dl>
+            <dt>ID</dt>
+            <dd class="well well-sm">{{smRoutingInfo.request.id}}</dd>
+            <dt>Received (Timestamp)</dt>
+            <dd class="well well-sm">{{smRoutingInfo.request['received-at']}}</dd>
+            <dt>Status Code</dt>
+            <dd class="well well-sm">{{smRoutingInfo.status.code}}</dd>
+            <dt>Message</dt>
+            <dd class="well well-sm">{{smRoutingInfo.status.message}}</dd>
+        </dl>
+        </li>
+        <li class="li-imsi">
+        <span>IMSI</span>
+        <dl>
+            <dt>IMSI</dt>
+            <dd class="well well-sm">{{smRoutingInfo.imsi.imsi}}</dd>
+            <dt>MCC</dt>
+            <dd class="well well-sm">{{smRoutingInfo.imsi.mcc}}</dd>
+            <dt>MNC</dt>
+            <dd class="well well-sm">{{smRoutingInfo.imsi.mnc}}</dd>
+            <dt>MSIN</dt>
+            <dd class="well well-sm">{{smRoutingInfo.imsi.msin}}</dd>
+        </dl>
+        </li>
+        </li>
+        <li class="li-msc">
+        <span>MSC</span>
+        <dl>
+            <dt>Address Nature</dt>
+            <dd class="well well-sm">{{smRoutingInfo['msc-address']['address-nature']}}</dd>
+            <dt>Numbering Plan</dt>
+            <dd class="well well-sm">{{smRoutingInfo['msc-address']['numbering-plan']}}</dd>
+            <dt>Address</dt>
+            <dd class="well well-sm">{{smRoutingInfo['msc-address']['address']}}</dd>
+        </dl>
+        </li>
+    </ul>
+    <p><a class="btn btn-primary btn-lg" role="button" href="#/routinginfos/{{smRoutingInfo.msisdn}}?timeout-millis={{invokeTimeoutMillis}}" ng-show="smRoutingInfo.msisdn">GET SRI &raquo;</a></p>
+</div>

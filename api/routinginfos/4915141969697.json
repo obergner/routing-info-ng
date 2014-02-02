@@ -1,0 +1,23 @@
+{
+    "api-version": "1.0",
+    "status": {
+        "code": 0,
+        "message": "OK"
+    },
+    "request": {
+        "id": "77bbd7a6-aae5-4c55-bd38-acb5ae1d3a75",
+        "received-at": 1391184517437
+    },
+    "msisdn": "4915141969697",
+    "imsi": {
+        "imsi": "262014149122029",
+        "mcc": "26",
+        "mnc": "201",
+        "msin": "4149122029"
+    },
+    "forwarded-to-number": {
+        "address-nature": "INTERNATIONAL_NUMBER",
+        "numbering-plan": "ISDN",
+        "address": "49408880864"
+    }
+}
