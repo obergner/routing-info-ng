@@ -1,3 +1,4 @@
+
 var routingInfoApp = angular.module('routingInfoApp', ['ngRoute', 'ngAnimate', 'routingInfoServices', 'routingInfoControllers']);
 
 routingInfoApp.constant('routingInfoSettings', {
@@ -8,12 +9,16 @@ routingInfoApp.constant('routingInfoSettings', {
 });
 
 routingInfoApp.run(function($rootScope) {
+    'use strict';
+
     $('.tooltip-enabled').tooltip({});
     $('.popover-enabled').popover({});
 });
 
 routingInfoApp.config(['$routeProvider', 
     function ($routeProvider) {
+        'use strict';
+
         $routeProvider.
         when('/', {
             templateUrl: 'app/partials/home.html',

@@ -1,20 +1,22 @@
 var routingInfoControllers = angular.module('routingInfoControllers', ['ngRoute', 'routingInfoServices']);
 
 routingInfoControllers.controller('NavigationBarCtrl', function ($scope, $location) {
+    'use strict';
 
     $scope.getSmRoutingInfo = function(msisdn, timeoutMillis) {
         $location.path('/smroutinginfos/' + msisdn).search('timeout-millis', timeoutMillis);
-    }
+    };
 
     $scope.isInvalidMsisdn = function(msisdn) {
         if (msisdn === undefined) {
             return true;
         }
         return !/^[1-9]\d{6,14}$/.test(msisdn);
-    }
+    };
 });
 
 routingInfoControllers.controller('RoutingInfoCtrl', function ($scope, $routeParams, RoutingInfos, HttpSupport) {
+    'use strict';
 
     (function() {
         $('.popover-enabled').popover({});
@@ -36,6 +38,7 @@ routingInfoControllers.controller('RoutingInfoCtrl', function ($scope, $routePar
 });
 
 routingInfoControllers.controller('SmRoutingInfoCtrl', function ($scope, $routeParams, SmRoutingInfos, HttpSupport) {
+    'use strict';
 
     (function() {
         $('.popover-enabled').popover({});

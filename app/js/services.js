@@ -1,6 +1,8 @@
 var routingInfoServices = angular.module('routingInfoServices', []);
 
 routingInfoServices.factory('RoutingInfos', function ($http, routingInfoSettings) {
+    'use strict';
+
     var getRoutingInfo = function(msisdn, invokeTimeoutMillis, onSuccess, onError) {
         $http.get("api/routinginfos/" + msisdn + ".json", { params: { 'timeout-millis': routingInfoSettings.timeoutMillisOrDefault(invokeTimeoutMillis) } })
         .success(onSuccess)
@@ -13,6 +15,8 @@ routingInfoServices.factory('RoutingInfos', function ($http, routingInfoSettings
 });
 
 routingInfoServices.factory('SmRoutingInfos', function ($http, routingInfoSettings) {
+    'use strict';
+
     var getSmRoutingInfo = function(msisdn, invokeTimeoutMillis, onSuccess, onError) {
         $http.get("api/smroutinginfos/" + msisdn + ".json", { params: { 'timeout-millis': routingInfoSettings.timeoutMillisOrDefault(invokeTimeoutMillis) } })
         .success(onSuccess)
@@ -25,6 +29,8 @@ routingInfoServices.factory('SmRoutingInfos', function ($http, routingInfoSettin
 });
 
 routingInfoServices.factory('HttpSupport', function () {
+    'use strict';
+
     var HttpStatusCodeMap = {
         200: 'OK',
         400: 'Bad Request',
